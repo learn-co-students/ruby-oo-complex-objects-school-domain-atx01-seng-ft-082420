@@ -12,8 +12,10 @@ class School
 
     def add_student(student, grade)
         roster[grade] ||= []
-        #we must use ||= (or equals) to avoid having a key's value 
-        #reassigned to an empty array.
+        #we must use ||= (or equals) which translates to roster[grade]= roster[grade] 
+        #or an empty array.We do this to avoid having a key's value 
+        #reassigned to an empty array when we are adding another student(value) to the
+        # same grade(key) in the roster hash.
         roster[grade].push(student)
     end
 
